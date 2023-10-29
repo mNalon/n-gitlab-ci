@@ -6,7 +6,7 @@ const REQUIRED_GITLAB_API_TOKEN_SETTING_ERROR_MESSAGE = `
     Gitlab API token is not defined. Set GITLAB_API_TOKEN environment variable!
 `;
 
-export const gitlab = ({ settings }) => (path, options = {}) => {
+export const gitlab = ({ settings }) => (path, options = { method: 'GET' }) => {
   const {
     gitlabAPIAddress,
     gitlabAPIToken,
@@ -30,6 +30,9 @@ export const gitlab = ({ settings }) => (path, options = {}) => {
       const errorMessage = `Error while communicating with gitlab API (${response.url}). Response status:${response.status}`;
       throw new Error(errorMessage);
     }
+
+    if (options.method === 'DELETE') return null;
+
     return response.json();
   }).catch((error) => {
     const errorMessage = `Error while communicating with gitlab API (${uri}). Error: ${error.message}`;

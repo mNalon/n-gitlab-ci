@@ -1,5 +1,5 @@
 const REQUIRED_GITLAB_API_ADDRESS_SETTING_ERROR_MESSAGE = `
-    Gitlab API host is not defined. Set GITLAB_API_HOST environment variable!
+    Gitlab API host is not defined. Set GITLAB_API_ADDRESS environment variable!
 `;
 
 const REQUIRED_GITLAB_API_TOKEN_SETTING_ERROR_MESSAGE = `

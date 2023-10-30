@@ -1,8 +1,11 @@
 {
-  "name": "gitlab-cli",
+  "name": "n-gitlab-cli",
   "version": "1.0.0",
   "description": "This is a CLI to interact with Gitlab API",
-  "main": "index.js",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "bin": "./src/index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
